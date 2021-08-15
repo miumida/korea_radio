@@ -1,0 +1,11 @@
+# Describes the format for available TTS services
+
+play_radio:
+  description: Say some things on a media player.
+  fields:
+    entity_id:
+      description: Name(s) of media player entities.
+      example: "media_player.mini"
+    channel:
+      description: Select radio channel.
+      example: "EBS"

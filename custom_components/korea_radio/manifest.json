@@ -1,0 +1,8 @@
+{
+  "domain": "korea_radio",
+  "name": "Korea Radio",
+  "documentation": "https://github.com/miumida/korea_radio",
+  "requirements": ["requests"],
+  "codeowners": ["@miumida"],
+  "version": "1.0.0"
+}
