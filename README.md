@@ -9,6 +9,7 @@
 Korea Radio 커스텀 컴포넌트 입니다.<br>
 소나미님께서 작성하신 파이썬 소스를 컴포넌트화 시켰습니다.<br>
 방송사에서 막으면 컴포넌트 수정이 불가하여, 지원이 안될 수도 있습니다.<br>
+아쉽지만 MBC와 EBS 밖에 지원이 되지 않습니다<br>
 
 <br>
 
@@ -55,7 +56,6 @@ data:
 |MBC FM4U|mbcfm4u|
 |MBC 표준FM|mbcfm|
 |MBC allthat|allthat|
-
 
 <br>
 
