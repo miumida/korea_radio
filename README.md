@@ -68,6 +68,6 @@ data:
 ## 참고사이트
 [1] 네이버 HomeAssistant 카페 | 소나미님의 [HA] HA => 구글 홈 미니로 라디오 재생 방법! final (<https://cafe.naver.com/koreassistant/5760>)<br>
 
-[version-shield]: https://img.shields.io/badge/version-v1.0.0-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.0.1-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg
