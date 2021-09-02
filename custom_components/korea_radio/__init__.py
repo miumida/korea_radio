@@ -8,7 +8,7 @@ from urllib.parse import quote
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 
-from .const import DOMAIN, EBS_ARTWORK, EBS_URL, FM4U_ARTWORK, CBS_URL, _MBC_CH, _MBC_CH_PARAM, MBC_BSE_URL, MBC_CALL_URL
+from .const import DOMAIN, EBS_ARTWORK, EBS_URL, FM4U_ARTWORK, CBS_URL, _MBC_CH, _MBC_CH_PARAM, MBC_BSE_URL, MBC_CALL_URL, _SBS_CH, _SBS_CH_PARAM, SBS_BSE_URL
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -34,9 +34,13 @@ def setup(hass, config):
 
                     play_media(entity_id, url, _MBC_CH_PARAM[ch][0], _MBC_CH_PARAM[ch][1])
 
-                #if ch == "cbs":
-                #    play_media(entity_id, CBS_URL, 'CBS MUSIC FM Radio', EBS_ARTWORK)
+                if ch == "cbs":
+                    play_media(entity_id, CBS_URL, 'CBS MUSIC FM Radio', EBS_ARTWORK)
 
+                if ch == "powerfm" or ch == "lovefm" or ch == "sbsdmb":
+                    url = get_sbs_ch_url(ch)
+                    
+                    play_media(entity_id, url, _SBS_CH_PARAM[ch][0], _SBS_CH_PARAM[ch][1])
             except Exception as ex:
                 _LOGGER.error("[Korea Radio] call Servie Exception : %s", ex )
 
@@ -44,7 +48,7 @@ def setup(hass, config):
         payload = {
             "entity_id": entity_id,
             "media_content_id": url,
-            "media_content_type": "music",
+            "media_content_type": "audio/mp4",
             "extra":
                 {"metadata" :
                     {"metadataType" : 3 ,
@@ -74,6 +78,31 @@ def setup(hass, config):
         urls = MBC_CALL_URL.format( _MBC_CH[ch], _MBC_CH[ch], text2)
 
         #_LOGGER.error( "[Korea Radio] get_mbc_ch_url() urls : %s", urls )
+
+        return urls
+
+    def get_sbs_ch_url(ch):
+        header = {
+            'Host': 'apis.sbs.co.kr',
+            'Connection': 'keep-alive',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_16_0) AppleWebKit/537.36 (KHTML, like Gecko) GOREALRA/1.2.1 Chrome/85.0.4183.121 Electron/10.1.3 Safari/537.36',
+            'Accept': '*/*',
+            'Origin': 'https://gorealraplayer.radio.sbs.co.kr',
+            'Sec-Fetch-Site': 'same-site',
+            'Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Dest': 'empty',
+            'Referer': 'https://gorealraplayer.radio.sbs.co.kr/main.html?v=1.2.1',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'ko',
+            'If-None-Match': 'W/"134-0OoLHiGF4IrBKYLjJQzxNs0/11M"'
+        }
+
+        html = requests.get(SBS_BSE_URL.format(_SBS_CH[ch], ch), headers=header)
+        
+        text = str(html.text)
+
+        urls = text 
+        #_LOGGER.error( "[Korea Radio] get_sbs_ch_url() urls : %s", urls )
 
         return urls
 
