@@ -58,9 +58,9 @@ data:
 |MBC FM4U|mbcfm4u|
 |MBC 표준FM|mbcfm|
 |MBC allthat|allthat|
-|SBS powerfm|powerpc|
-|SBS lovefm|lovepc|
-|SBS sbsdmb|sbsdmbpc|
+|SBS POWER FM|powerfm|
+|SBS LOVE FM|lovefm|
+|SBS DMB|sbsdmb|
 
 <br>
 
