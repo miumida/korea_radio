@@ -53,3 +53,22 @@ FM4U_SCH = {
 
 #CBS
 CBS_URL = "http://aac.cbs.co.kr/cbs939/_definst_/cbs939.stream/playlist.m3u8"
+
+#SBS
+SBS_BSE_URL = "https://apis.sbs.co.kr/play-api/1.0/livestream/{}/{}?protocol=hls&ssl=Y"
+
+SBS_ARTWORK_POWERFM = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_powerfm.png?raw=true"
+SBS_ARTWORK_LOVEFM  = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_lovefm.jpeg?raw=true"
+SBS_ARTWORK_SBSDMB  = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_sbsdmb.jpeg?raw=true"
+
+_SBS_CH = {
+    'powerfm' : 'powerpc',
+    'lovefm'  : 'lovepc',
+    'sbsdmb'  : 'sbsdmbpc'
+}
+
+_SBS_CH_PARAM  = {
+    'powerfm' : [ 'SBS POWER FM',   SBS_ARTWORK_POWERFM ],
+    'lovefm'  : [ 'SBS LOVE FM',    SBS_ARTWORK_LOVEFM  ],
+    'sbsdmb'  : [ 'SBS 로릴라디오M',   SBS_ARTWORK_SBSDMB  ]
+}
