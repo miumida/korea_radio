@@ -17,7 +17,7 @@ Korea Radio 커스텀 컴포넌트 입니다.<br>
 | Version | Date        | 내용              |
 | :-----: | :---------: | ----------------------- |
 | v1.0.0  | 2021.08.16  | First version  |
-| v1.0.1  | 2021.09.02  | SBS 채널 추가(Thx.)  |
+| v1.0.1  | 2021.09.02  | SBS 채널 추가(Thx. angkk2u)  |
 
 <br>
 
@@ -62,6 +62,7 @@ data:
 
 #### thanks to.
 - 네이버 HomeAssistant 카페 | 소나미님
+- angkk2u
 
 <br>
 
