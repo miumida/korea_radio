@@ -59,7 +59,7 @@ SBS_BSE_URL = "https://apis.sbs.co.kr/play-api/1.0/livestream/{}/{}?protocol=hls
 
 SBS_ARTWORK_POWERFM = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_powerfm.png?raw=true"
 SBS_ARTWORK_LOVEFM  = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_lovefm.png?raw=true"
-SBS_ARTWORK_SBSDMB  = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_sbsdmb.jpeg?raw=true"
+SBS_ARTWORK_SBSDMB  = "https://github.com/miumida/korea_radio/blob/main/cover_image/sbs_sbsdmb.png?raw=true"
 
 _SBS_CH = {
     'powerfm' : 'powerpc',
