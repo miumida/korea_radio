@@ -1,11 +1,23 @@
-# Describes the format for available TTS services
-
+# Describes the format for available Play Radio services
 play_radio:
   description: Say some things on a media player.
   fields:
     entity_id:
       description: Name(s) of media player entities.
       example: "media_player.mini"
+      selector:
+        entity:
+          domain: media_player
     channel:
       description: Select radio channel.
       example: "EBS"
+      selector:
+        select:
+          options:
+            - EBS
+            - mbcfm4u
+            - mbcfm
+            - allthat
+            - powerfm
+            - lovefm
+            - sbsdmb
