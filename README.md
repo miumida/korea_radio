@@ -20,6 +20,7 @@ SBS 채널이 추가 되었습니다.<br>
 | v1.0.0  | 2021.08.16  | First version  |
 | v1.0.1  | 2021.09.02  | SBS 채널 추가(Thx. angkk2u)  |
 | v1.0.2  | 2021.09.03  | SBS Cover Image 변경  |
+| v1.0.3  | 2021.09.07  | services.yaml 수정  |
 
 <br>
 
@@ -74,6 +75,6 @@ data:
 ## 참고사이트
 [1] 네이버 HomeAssistant 카페 | 소나미님의 [HA] HA => 구글 홈 미니로 라디오 재생 방법! final (<https://cafe.naver.com/koreassistant/5760>)<br>
 
-[version-shield]: https://img.shields.io/badge/version-v1.0.2-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.0.3-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg
