@@ -9,8 +9,8 @@
 Korea Radio 커스텀 컴포넌트 입니다.<br>
 소나미님께서 작성하신 파이썬 소스를 컴포넌트화 시켰습니다.<br>
 방송사에서 막으면 컴포넌트 수정이 불가하여, 지원이 안될 수도 있습니다.<br>
-아쉽지만 MBC와 EBS 밖에 지원이 되지 않습니다<br>
-SBS 채널이 추가 되었습니다.<br>
+아쉽지만 MBC, SBS, EBS, CBS 채널이 지원됩니다.<br>
+
 
 <br>
 
@@ -21,6 +21,7 @@ SBS 채널이 추가 되었습니다.<br>
 | v1.0.1  | 2021.09.02  | SBS 채널 추가(Thx. angkk2u)  |
 | v1.0.2  | 2021.09.03  | SBS Cover Image 변경  |
 | v1.0.3  | 2021.09.07  | services.yaml 수정  |
+| v1.0.4  | 2022.02.06  | CBS 채널 추가. services.yaml 수정  |
 
 <br>
 
@@ -63,6 +64,8 @@ data:
 |SBS POWER FM|powerfm|
 |SBS LOVE FM|lovefm|
 |SBS 고릴라디오M|sbsdmb|
+|CBS 표준FM|cbssfm|
+|CBS 음악FM|cbsmfm|
 
 <br>
 
@@ -75,6 +78,6 @@ data:
 ## 참고사이트
 [1] 네이버 HomeAssistant 카페 | 소나미님의 [HA] HA => 구글 홈 미니로 라디오 재생 방법! final (<https://cafe.naver.com/koreassistant/5760>)<br>
 
-[version-shield]: https://img.shields.io/badge/version-v1.0.3-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.0.4-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg
