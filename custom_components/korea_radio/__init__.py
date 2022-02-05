@@ -8,7 +8,7 @@ from urllib.parse import quote
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 
-from .const import DOMAIN, EBS_ARTWORK, EBS_URL, FM4U_ARTWORK, CBS_SFM_URL, CBS_MFM_URL, _MBC_CH, _MBC_CH_PARAM, MBC_BSE_URL, MBC_CALL_URL, _SBS_CH, _SBS_CH_PARAM, SBS_BSE_URL
+from .const import DOMAIN, EBS_ARTWORK, EBS_URL, FM4U_ARTWORK, CBS_SFM_URL, CBS_MFM_URL, _MBC_CH, _MBC_CH_PARAM, MBC_BSE_URL, MBC_CALL_URL, _SBS_CH, _SBS_CH_PARAM, SBS_BSE_URL, CBS_ARTWORK_SFM, CBS_ARTWORK_MFM
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -35,10 +35,10 @@ def setup(hass, config):
                     play_media(entity_id, url, _MBC_CH_PARAM[ch][0], _MBC_CH_PARAM[ch][1])
 
                 if ch == "cbssfm":
-                    play_media(entity_id, CBS_SFM_URL, 'CBS Standard FM Radio', EBS_ARTWORK)
+                    play_media(entity_id, CBS_SFM_URL, 'CBS Standard FM Radio', CBS_ARTWORK_SFM)
 
                 if ch == "cbsmfm":
-                    play_media(entity_id, CBS_MFM_URL, 'CBS MUSIC FM Radio', EBS_ARTWORK)
+                    play_media(entity_id, CBS_MFM_URL, 'CBS MUSIC FM Radio', CBS_ARTWORK_MFM)
 
                 if ch == "powerfm" or ch == "lovefm" or ch == "sbsdmb":
                     url = get_sbs_ch_url(ch)
