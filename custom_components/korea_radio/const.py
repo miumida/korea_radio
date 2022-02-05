@@ -52,8 +52,11 @@ FM4U_SCH = {
 }
 
 #CBS
-CBS_SFM_URL    = "http://aac.cbs.co.kr/cbs981/_definst_/cbs981.stream/playlist.m3u8"
+CBS_SFM_URL = "http://aac.cbs.co.kr/cbs981/_definst_/cbs981.stream/playlist.m3u8"
 CBS_MFM_URL = "http://aac.cbs.co.kr/cbs939/_definst_/cbs939.stream/playlist.m3u8"
+
+CBS_ARTWORK_SFM = "https://github.com/miumida/korea_radio/blob/main/cover_image/cbs_sfm.png?raw=true"
+CBS_ARTWORK_MFM = "https://github.com/miumida/korea_radio/blob/main/cover_image/cbs_mfm.png?raw=true"
 
 #SBS
 SBS_BSE_URL = "https://apis.sbs.co.kr/play-api/1.0/livestream/{}/{}?protocol=hls&ssl=Y"
