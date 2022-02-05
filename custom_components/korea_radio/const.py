@@ -52,7 +52,8 @@ FM4U_SCH = {
 }
 
 #CBS
-CBS_URL = "http://aac.cbs.co.kr/cbs939/_definst_/cbs939.stream/playlist.m3u8"
+CBS_SFM_URL    = "http://aac.cbs.co.kr/cbs981/_definst_/cbs981.stream/playlist.m3u8"
+CBS_MFM_URL = "http://aac.cbs.co.kr/cbs939/_definst_/cbs939.stream/playlist.m3u8"
 
 #SBS
 SBS_BSE_URL = "https://apis.sbs.co.kr/play-api/1.0/livestream/{}/{}?protocol=hls&ssl=Y"
