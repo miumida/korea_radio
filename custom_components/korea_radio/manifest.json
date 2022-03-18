@@ -4,6 +4,6 @@
   "documentation": "https://github.com/miumida/korea_radio",
   "requirements": ["requests"],
   "codeowners": ["@miumida"],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "config_flow": true
 }
