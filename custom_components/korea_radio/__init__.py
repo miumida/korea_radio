@@ -7,13 +7,28 @@ from urllib.parse import quote
 
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
+from homeassistant import config_entries
+from homeassistant.helpers.aiohttp_client import async_create_clientsession
 
 from .const import DOMAIN, EBS_ARTWORK, EBS_URL, FM4U_ARTWORK, CBS_SFM_URL, CBS_MFM_URL, _MBC_CH, _MBC_CH_PARAM, MBC_BSE_URL, MBC_CALL_URL, _SBS_CH, _SBS_CH_PARAM, SBS_BSE_URL, CBS_ARTWORK_SFM, CBS_ARTWORK_MFM
 
 _LOGGER = logging.getLogger(__name__)
 
-def setup(hass, config):
-    """Set up the Korea Radio."""
+async def async_setup(hass, config):
+
+    if DOMAIN not in config:
+        return True
+
+    return True
+
+
+async def async_setup_entry(hass, config_entry):
+    """Set up this integration using UI."""
+
+    async def radio_handle(service):
+        session = async_get_clientsession(hass)
+
+        return True
 
     def radio_handle(service):
         """Service handle for Play Radio."""
@@ -42,29 +57,10 @@ def setup(hass, config):
 
                 if ch == "powerfm" or ch == "lovefm" or ch == "sbsdmb":
                     url = get_sbs_ch_url(ch)
-                    
+
                     play_media(entity_id, url, _SBS_CH_PARAM[ch][0], _SBS_CH_PARAM[ch][1])
             except Exception as ex:
-                _LOGGER.error("[Korea Radio] call Servie Exception : %s", ex )
-
-    def play_media(entity_id, url, title, thumb):
-        payload = {
-            "entity_id": entity_id,
-            "media_content_id": url,
-            "media_content_type": "audio/mp4",
-            "extra":
-                {"metadata" :
-                    {"metadataType" : 3 ,
-                     "title" :  title,
-                     "images" :[{"url" : thumb}]
-                    }
-                }
-            }
-
-        try:
-            hass.services.call("media_player", 'play_media', payload, False)
-        except Exception as ex:
-            _LOGGER.error("[Korea Radio] call Servie Exception : %s", ex )
+                _LOGGER.error(f"[{DOMAIN}] call Service Exception : %s", ex )
 
 
     def get_mbc_ch_url(ch):
@@ -101,13 +97,34 @@ def setup(hass, config):
         }
 
         html = requests.get(SBS_BSE_URL.format(_SBS_CH[ch], ch), headers=header)
-        
+
         text = str(html.text)
 
-        urls = text 
+        urls = text
         #_LOGGER.error( "[Korea Radio] get_sbs_ch_url() urls : %s", urls )
 
         return urls
 
-    hass.services.register(DOMAIN, "play_radio", radio_handle)
+    def play_media(entity_id, url, title, thumb):
+        payload = {
+            "entity_id": entity_id,
+            "media_content_id": url,
+            "media_content_type": "audio/mp4",
+            "extra":
+                {"metadata" :
+                    {"metadataType" : 3 ,
+                     "title" :  title,
+                     "images" :[{"url" : thumb}]
+                    }
+                }
+            }
+
+        try:
+            hass.services.call("media_player", 'play_media', payload, False)
+        except Exception as ex:
+            _LOGGER.error(f"[{DOMAIN}] call Service Exception : %s", ex )
+
+
+    hass.services.async_register(DOMAIN, "play_radio", radio_handle)
+
     return True

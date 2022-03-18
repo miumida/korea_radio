@@ -1,4 +1,5 @@
 DOMAIN = "korea_radio"
+TITLE  = "Korea Radio"
 
 #EBS FM
 EBS_URL = "https://ebsonair.ebs.co.kr/fmradiofamilypc/familypc1m/playlist.m3u8"
